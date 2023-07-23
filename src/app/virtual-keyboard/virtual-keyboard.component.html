@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="virtual-keyboard">
+    <div class="row">
+      <div
+        *ngFor="let key of first_row_keys"
+        (click)="onKeyPress(key)"
+        class="key"
+      >
+        {{ key }}
+      </div>
+    </div>
+    <div class="row">
+      <div
+        *ngFor="let key of second_row_keys"
+        (click)="onKeyPress(key)"
+        class="key"
+      >
+        {{ key }}
+      </div>
+    </div>
+    <div class="row">
+      <div
+        *ngFor="let key of third_row_keys"
+        (click)="onKeyPress(key)"
+        class="key"
+      >
+        {{ key }}
+      </div>
+    </div>
+  </div>
+</div>
