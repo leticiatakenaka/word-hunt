@@ -5,12 +5,12 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class RandomWordsService {
-  private url = "https://random-words-api.vercel.app/word/"
+export class DictionaryService {
+  private url = "https://api.dictionaryapi.dev/api/v2/entries/en/"
 
   constructor(private http: HttpClient) { }
 
-  getWord(): Observable<any> {
-    return this.http.get(`${this.url}verb`)
+  getWordDefinition(word: String): Observable<any> {
+    return this.http.get(`${this.url}${word}`)
   }
 }
