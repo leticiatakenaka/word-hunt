@@ -9,6 +9,7 @@ export class RandomWordsService {
   private url = "https://random-words-api.vercel.app/word/";
   private wordSubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
   private definitionSubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  private discoveryLettersSubject: BehaviorSubject<string[]> = new BehaviorSubject<string[]>(['']);
 
   constructor(private http: HttpClient) { }
 
@@ -22,7 +23,11 @@ export class RandomWordsService {
   }
 
   setDiscoveryLetters(letters: string[]) {
+    this.discoveryLettersSubject.next(letters);
+  }
 
+  getDiscoveryLetters(): Observable<string[]> {
+    return this.discoveryLettersSubject.asObservable();
   }
 
   getWordObservable(): Observable<string> {

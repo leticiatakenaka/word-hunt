@@ -37,8 +37,9 @@ export class VirtualKeyboardComponent {
       this.word = word;
       this.word_letters = this.word.toUpperCase().split('');
       for (let i = 1; i < this.word_letters.length; i++) {
-        this.discovery_letters.push('_');
+        this.discovery_letters.push(' ');
       }
+      this.randomWordsService.setDiscoveryLetters(this.discovery_letters);
     });
 
     this.randomWordsService
