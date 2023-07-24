@@ -14,5 +14,6 @@ export class VirtualKeyboardComponent {
 
   onKeyPress(key: string): void {
     this.keyPress.emit(key);
+    console.log(key);
   }
 }
