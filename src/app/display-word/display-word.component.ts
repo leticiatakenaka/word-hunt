@@ -18,21 +18,21 @@ export class DisplayWordComponent implements OnInit {
   word_letters: string[] = this.word.toUpperCase().split('');
 
   ngOnInit() {
-    this.randomWordsService.getWord().subscribe((data) => {
-      this.dictionaryService
-        .getWordDefinition(data[0].word)
-        .subscribe((data) => {
-          for (let i = 0; i < data[0].meanings.length; i++) {
-            if (data[0].meanings[i].partOfSpeech === 'verb') {
-              this.word = data[0].word;
-              this.definition = data[0].meanings[i].definitions[0].definition;
-              this.word_letters = this.word.toUpperCase().split('');
+    // this.randomWordsService.getWord().subscribe((data) => {
+    //   this.dictionaryService
+    //     .getWordDefinition(data[0].word)
+    //     .subscribe((data) => {
+    //       for (let i = 0; i < data[0].meanings.length; i++) {
+    //         if (data[0].meanings[i].partOfSpeech === 'verb') {
+    //           this.word = data[0].word;
+    //           this.definition = data[0].meanings[i].definitions[0].definition;
+    //           this.word_letters = this.word.toUpperCase().split('');
 
-              this.randomWordsService.setWordAndDefinition(this.word, this.definition);
-              break;
-            }
-          }
-        });
-    });
+    this.randomWordsService.setWordAndDefinition(this.word, this.definition);
+    //           break;
+    //         }
+    //       }
+    //     });
+    // });
   }
 }

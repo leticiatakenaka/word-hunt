@@ -21,6 +21,10 @@ export class RandomWordsService {
     this.definitionSubject.next(definition);
   }
 
+  setDiscoveryLetters(letters: string[]) {
+
+  }
+
   getWordObservable(): Observable<string> {
     return this.wordSubject.asObservable();
   }
