@@ -7,11 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'word-hunt';
-
-  result: string = '';
-
-  onKeyPress(key: string): void {
-    this.result = key;
-    console.log(this.result);
-  }
 }
